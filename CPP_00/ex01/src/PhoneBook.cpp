@@ -6,7 +6,7 @@
 /*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/25 15:46:59 by mevan-de      #+#    #+#                 */
-/*   Updated: 2023/01/25 17:47:31 by mevan-de      ########   odam.nl         */
+/*   Updated: 2023/01/25 18:41:29 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,20 @@
 
 PhoneBook::PhoneBook( void ) {
 	this->_currContactIndex = 0;
-	this->phonebook_loop();
+	this->_nrOfContacts = 0;
+	this->loop();
 	return ;
 }
 
 PhoneBook::~PhoneBook( void ) {
-	std::cout << "destroyed a phonebook" << std::endl;
 	return ;
 }
 
 void	PhoneBook::increment_contact_index() {
 	this->_currContactIndex++;
-	this->_currContactIndex %= 7;
+	this->_currContactIndex %= 8;
+	if (this->_nrOfContacts < 8)
+		this->_nrOfContacts++;
 	return ;
 }
 
@@ -76,7 +78,34 @@ input_type	PhoneBook::get_input_type (std::string str)
 	return (UNKNOWN);
 }
 
-void	PhoneBook::phonebook_loop() {
+void	PhoneBook::display_contacts() {
+	std::cout << "---------------------------------------------" << std::endl;
+	std::cout << "|     INDEX|     FIRST|      LAST|      NICK|" << std::endl;
+	std::cout << "---------------------------------------------" << std::endl;
+	std::cout << "---------------------------------------------" << std::endl;
+	for (int i = 0; i < this->_nrOfContacts; i++) {
+		this->contacts[i].display_info(i);
+		std::cout << "---------------------------------------------" << std::endl;
+	}
+}
+
+void	PhoneBook::search() {
+	if (this->_nrOfContacts > 0)
+		this->display_contacts();
+	else {
+		std::cout << "No contacts found" << std::endl << std::endl;
+		return ;
+	}
+	
+	std::string input;
+	getline(std::cin, input);
+	//TODO 
+// 	Then, prompt the user again for the index of the entry to display. If the index
+// is out of range or wrong, define a relevant behavior. Otherwise, display the
+// contact information, one field per line.
+}
+
+void	PhoneBook::loop() {
 	std::string	input;
 	input_type	input_type;
 
@@ -91,7 +120,7 @@ void	PhoneBook::phonebook_loop() {
 				this->save_new_contact();
 				break;
 			case SEARCH:
-				std::cout << "search\n";
+				this->search();
 				break;
 			case EXIT:
 				exit(0);
