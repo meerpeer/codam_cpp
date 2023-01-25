@@ -6,14 +6,12 @@
 /*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/24 12:17:22 by mevan-de      #+#    #+#                 */
-/*   Updated: 2023/01/25 15:00:22 by mevan-de      ########   odam.nl         */
+/*   Updated: 2023/01/25 17:52:03 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
-#include <algorithm>
-
 
 int main(int argc, char **argv)
 {

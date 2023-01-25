@@ -6,7 +6,7 @@
 #    By: mevan-de <mevan-de@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/01/06 13:40:26 by mevan-de      #+#    #+#                  #
-#    Updated: 2023/01/25 15:32:35 by mevan-de      ########   odam.nl          #
+#    Updated: 2023/01/25 17:50:57 by mevan-de      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ OBJ_PATH = obj
 
 SRCS = $(shell find $(SRC_PATH) -type f -name '*.cpp')
 OBJS = $(addprefix $(OBJ_PATH)/,$(SRCS:.cpp=.o))
-INCLUDE = -I ./include
+INCLUDE = ./include
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
@@ -34,11 +34,11 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) $(INCLUDE) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) -I $(INCLUDE) -o $(NAME)
 
-$(OBJ_PATH)/%.o: %.cpp
+$(OBJ_PATH)/%.o: %.cpp $(INCLUDE)
 	mkdir -p $(@D)
-	$(CC) $(CFLAGS) -o $@ -c $(INCLUDE) $<
+	$(CC) $(CFLAGS) -o $@ -c -I $(INCLUDE) $<
 
 clean:
 	rm -f $(OBJS)
