@@ -6,7 +6,7 @@
 #    By: mevan-de <mevan-de@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/01/06 13:40:26 by mevan-de      #+#    #+#                  #
-#    Updated: 2023/01/06 13:40:46 by mevan-de      ########   odam.nl          #
+#    Updated: 2023/01/25 15:32:35 by mevan-de      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,10 +17,14 @@
 
 NAME = phonebook
 
-SRCS = megaphone.cpp
-OBJS = $(SRCS:%.cpp=%.o)
+SRC_PATH = src
+OBJ_PATH = obj
 
-CC = clang++
+SRCS = $(shell find $(SRC_PATH) -type f -name '*.cpp')
+OBJS = $(addprefix $(OBJ_PATH)/,$(SRCS:.cpp=.o))
+INCLUDE = -I ./include
+
+CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
 #=====================================#
@@ -29,17 +33,19 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
-%.o: %.cpp
-	@$(CC) $(CFLAGS) -c $(SRCS)
-
 $(NAME): $(OBJS)
-	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) $(INCLUDE) -o $(NAME)
+
+$(OBJ_PATH)/%.o: %.cpp
+	mkdir -p $(@D)
+	$(CC) $(CFLAGS) -o $@ -c $(INCLUDE) $<
 
 clean:
-	@rm -f $(OBJS)
+	rm -f $(OBJS)
+	rm -rf $(OBJ_PATH)
 
 fclean: clean
-	@rm -f $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 
