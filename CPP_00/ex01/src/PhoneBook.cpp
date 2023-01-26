@@ -6,7 +6,7 @@
 /*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/25 15:46:59 by mevan-de      #+#    #+#                 */
-/*   Updated: 2023/01/25 18:41:29 by mevan-de      ########   odam.nl         */
+/*   Updated: 2023/01/26 13:42:35 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,9 @@ void	PhoneBook::increment_contact_index() {
 
 std::string	PhoneBook::get_input(std::string prompt, bool isPhoneNr) {
 	std::string	input;
-	while (1)
+	std::cout << prompt;
+	while (getline(std::cin, input))
 	{
-		std::cout << prompt;
-		getline(std::cin, input);
 		if (input.length() <= 0)
 			std::cout << "Please provide an argument" << std::endl;
 		else if (!isPhoneNr)
@@ -46,7 +45,9 @@ std::string	PhoneBook::get_input(std::string prompt, bool isPhoneNr) {
 			return (input);
 		else
 			std::cout << "Please provide a number (without spaces)" << std::endl;
+		std::cout << prompt;
 	}
+	exit (1);
 }
 
 void PhoneBook::save_new_contact() {
@@ -98,21 +99,28 @@ void	PhoneBook::search() {
 	}
 	
 	std::string input;
-	getline(std::cin, input);
-	//TODO 
-// 	Then, prompt the user again for the index of the entry to display. If the index
-// is out of range or wrong, define a relevant behavior. Otherwise, display the
-// contact information, one field per line.
+	std::cout << "contact index: ";
+	while(getline(std::cin, input)) {
+		if (input.find_first_not_of("01234567") == std::string::npos
+			&& input.length() == 1) {
+				int	index = input[0] - '0';
+				if (index < this->_nrOfContacts) {
+					this->contacts[index].display_all_info(index);
+					return ;
+				}
+			}
+		std::cout << "please provide a valid index" << std::endl;
+		std::cout << "contact index: ";
+	}
 }
 
 void	PhoneBook::loop() {
 	std::string	input;
 	input_type	input_type;
 
-	while (1)
+	std::cout << "Use commands: ADD, SEARCH, EXIT\n";
+	while (getline(std::cin, input))
 	{
-		std::cout << "Use commands: ADD, SEARCH, EXIT\n";
-		getline(std::cin, input);
 		input_type = this->get_input_type(input);
 		switch (input_type)
 		{
@@ -128,6 +136,7 @@ void	PhoneBook::loop() {
 			default:
 				std::cout << "what?!\n";
 		}
+		std::cout << "Use commands: ADD, SEARCH, EXIT\n";
 	}
 }
 
