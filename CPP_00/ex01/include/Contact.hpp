@@ -6,7 +6,7 @@
 /*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/25 15:34:07 by mevan-de      #+#    #+#                 */
-/*   Updated: 2023/01/26 13:36:17 by mevan-de      ########   odam.nl         */
+/*   Updated: 2023/01/26 15:32:16 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ public:
 	
 	void		display_info(int index);
 	void		display_all_info(int index);
-
 };
 
 #endif
