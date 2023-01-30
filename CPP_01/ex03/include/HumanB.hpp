@@ -13,6 +13,7 @@ private:
 public:
 	HumanB();
 	void	attack();
+	void	setWeapon(Weapon &weapon);
 	~HumanB();
 };
 
