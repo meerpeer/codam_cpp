@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/30 10:01:59 by merel             #+#    #+#             */
-/*   Updated: 2023/01/30 10:51:58 by merel            ###   ########.fr       */
+/*   Created: 2023/01/30 09:44:52 by merel             #+#    #+#             */
+/*   Updated: 2023/01/30 10:48:49 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+#include <iostream>
 
-int	main( void ){
-	Zombie	*Zombie1 = newZombie("Unicorn");
-	Zombie	*Zombie2 = newZombie("Glenn");
+Zombie::Zombie() {
+	
+}
 
-	Zombie1->announce();
-	randomChump("Bagel");
-	Zombie2->announce();
-	delete Zombie1;
-	delete Zombie2;
+Zombie::Zombie(std::string name) : _name(name) {
+	
+}
+
+void	Zombie::setName (std::string name) {
+	this->_name = name;
+}
+
+void	Zombie::announce( void ) {
+	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+}
+
+Zombie::~Zombie() {
+	std::cout << this->_name << " - got destroyed" << std::endl;
 }
