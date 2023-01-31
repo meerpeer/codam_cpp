@@ -6,7 +6,7 @@
 /*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/25 15:46:59 by mevan-de      #+#    #+#                 */
-/*   Updated: 2023/01/26 13:42:35 by mevan-de      ########   odam.nl         */
+/*   Updated: 2023/01/27 17:43:08 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ std::string	PhoneBook::get_input(std::string prompt, bool isPhoneNr) {
 			std::cout << "Please provide a number (without spaces)" << std::endl;
 		std::cout << prompt;
 	}
-	exit (1);
+	exit (0);
 }
 
 void PhoneBook::save_new_contact() {
@@ -112,6 +112,7 @@ void	PhoneBook::search() {
 		std::cout << "please provide a valid index" << std::endl;
 		std::cout << "contact index: ";
 	}
+	exit (0);
 }
 
 void	PhoneBook::loop() {
