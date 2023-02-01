@@ -36,18 +36,35 @@ void Harl::error(void)
 	std::cout << std::endl;
 }
 
-void Harl::complain(std::string level)
+int Harl::get_level(std::string level)
 {
-	t_function	complainFunctions[4] = {
-		{"DEBUG", &Harl::debug},
-		{"INFO", &Harl::info},
-		{"WARNING", &Harl::warning},
-		{"ERROR", &Harl::error} };
+	std::string	complainLevels[4] = {
+		"DEBUG",
+		"INFO",
+		"WARNING",
+		"ERROR" };
 	
 	for (int i = 0; i < 4; i++) {
-		t_function function = complainFunctions[i];
-		if (function.command == level)
-			return (this->*function.function)();
+		std::string complainLevel = complainLevels[i];
+		if (complainLevel == level)
+			return (i);
+	}
+	return -1;
+}
+
+void Harl::complain(std::string level)
+{
+	switch(get_level(level))
+	{
+		case DEBUG:
+			debug();
+		case INFO:
+			info();
+		case WARNING:
+			warning();
+		case ERROR:
+			error();
+			return ;
 	}
 	std::cout << "\"" << level << "\" is not an option for Harl";
 	std::cout << std::endl;
@@ -56,4 +73,3 @@ void Harl::complain(std::string level)
 Harl::~Harl()
 {
 }
-
