@@ -6,7 +6,7 @@
 /*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/25 15:46:59 by mevan-de      #+#    #+#                 */
-/*   Updated: 2023/01/27 17:43:08 by mevan-de      ########   odam.nl         */
+/*   Updated: 2023/02/02 15:31:28 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,16 @@
 PhoneBook::PhoneBook( void ) {
 	this->_currContactIndex = 0;
 	this->_nrOfContacts = 0;
-	this->loop();
 	return ;
 }
 
 PhoneBook::~PhoneBook( void ) {
 	return ;
+}
+
+void PhoneBook::start_phonebook()
+{
+	loop();
 }
 
 void	PhoneBook::increment_contact_index() {
@@ -57,12 +61,12 @@ void PhoneBook::save_new_contact() {
 	std::cout << std::endl << "Adding new contact" << std::endl;
 	std::cout << "------------------" << std::endl;
 
-	this->contacts[index].firstName = this->get_input("first name: ", false);
-	this->contacts[index].lastName = this->get_input("last name: ", false);
-	this->contacts[index].nickName = this->get_input("nick name: ", false);
-	this->contacts[index].phoneNumber = this->get_input("phone number: ", true);
-	this->contacts[index].darkestSecret = this->get_input("darkest secret: ", false);
-	this->increment_contact_index();
+	this->contacts[index].set_first_name(get_input("first name: ", false));
+	this->contacts[index].set_last_name(get_input("last name: ", false));
+	this->contacts[index].set_nick_name(get_input("nick name: ", false));
+	this->contacts[index].set_phone_number(this->get_input("phone number: ", true));
+	this->contacts[index].set_darkest_secret(this->get_input("darkest secret: ", false));
+	increment_contact_index();
 
 	std::cout << std::endl << "Contact added!" << std::endl;
 	std::cout << "--------------" << std::endl << std::endl;
@@ -122,14 +126,14 @@ void	PhoneBook::loop() {
 	std::cout << "Use commands: ADD, SEARCH, EXIT\n";
 	while (getline(std::cin, input))
 	{
-		input_type = this->get_input_type(input);
+		input_type = get_input_type(input);
 		switch (input_type)
 		{
 			case ADD:
-				this->save_new_contact();
+				save_new_contact();
 				break;
 			case SEARCH:
-				this->search();
+				search();
 				break;
 			case EXIT:
 				exit(0);

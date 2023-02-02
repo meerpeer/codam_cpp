@@ -6,7 +6,7 @@
 /*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/25 15:33:52 by mevan-de      #+#    #+#                 */
-/*   Updated: 2023/01/25 18:05:37 by mevan-de      ########   odam.nl         */
+/*   Updated: 2023/02/02 15:31:02 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ private:
 public:
 	PhoneBook( void );
 	~PhoneBook( void );
+
+	void		start_phonebook();
 };
 
 #endif
