@@ -21,5 +21,8 @@ int main()
 	jim.attack();
 	}
 
+	HumanB Kees("Kees");
+	Kees.attack();
+
 	return 0;
 }

@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: merel <merel@student.42.fr>                +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/01/30 10:53:40 by merel             #+#    #+#              #
-#    Updated: 2023/02/01 11:56:15 by merel            ###   ########.fr        #
+#                                                         ::::::::             #
+#    Makefile                                           :+:    :+:             #
+#                                                      +:+                     #
+#    By: merel <merel@student.42.fr>                  +#+                      #
+#                                                    +#+                       #
+#    Created: 2023/01/30 10:53:40 by merel         #+#    #+#                  #
+#    Updated: 2023/02/03 16:12:14 by mevan-de      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRCS = $(shell find $(SRC_PATH) -type f -name '*.cpp')
 OBJS = $(addprefix $(OBJ_PATH)/,$(SRCS:.cpp=.o))
 
 CC = c++
-FLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 #=====================================#
 #=============== Rules ===============#

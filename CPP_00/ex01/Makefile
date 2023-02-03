@@ -6,7 +6,7 @@
 #    By: mevan-de <mevan-de@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/01/06 13:40:26 by mevan-de      #+#    #+#                  #
-#    Updated: 2023/01/25 17:50:57 by mevan-de      ########   odam.nl          #
+#    Updated: 2023/02/03 16:11:40 by mevan-de      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ OBJS = $(addprefix $(OBJ_PATH)/,$(SRCS:.cpp=.o))
 INCLUDE = ./include
 
 CC = c++
-FLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 #=====================================#
 #=============== Rules ===============#

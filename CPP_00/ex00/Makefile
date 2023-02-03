@@ -6,7 +6,7 @@
 #    By: mevan-de <mevan-de@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/01/06 13:40:31 by mevan-de      #+#    #+#                  #
-#    Updated: 2023/01/25 15:11:15 by mevan-de      ########   odam.nl          #
+#    Updated: 2023/02/03 16:11:45 by mevan-de      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRCS = megaphone.cpp
 OBJS = $(SRCS:%.cpp=%.o)
 
 CC = c++
-FLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 #=====================================#
 #=============== Rules ===============#

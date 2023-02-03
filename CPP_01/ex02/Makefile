@@ -6,7 +6,7 @@
 #    By: merel <merel@student.42.fr>                  +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/01/30 10:53:40 by merel         #+#    #+#                  #
-#    Updated: 2023/02/03 13:54:01 by mevan-de      ########   odam.nl          #
+#    Updated: 2023/02/03 16:11:57 by mevan-de      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRCS = main.cpp
 OBJS = $(addprefix $(OBJ_PATH)/,$(SRCS:.cpp=.o))
 
 CC = c++
-FLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 #=====================================#
 #=============== Rules ===============#

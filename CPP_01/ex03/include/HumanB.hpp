@@ -14,6 +14,7 @@ public:
 	HumanB(std::string name);
 	void	attack();
 	void	setWeapon(Weapon &weapon);
+	Weapon	*getWeapon();
 	~HumanB();
 };
 

@@ -6,7 +6,7 @@ std::string	copy_replaced_line(std::string line, std::string search, std::string
 	int	start_position = 0;
 	int	position = line.find(search, start_position);
 
-	while (position != std::string::npos)
+	while (position != (int) std::string::npos)
 	{
 		line.erase(position, search.length());
 		line.insert(position, replace);
