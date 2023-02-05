@@ -38,4 +38,3 @@ Fixed &Fixed::operator=(const Fixed &other)
 	setRawBits(other.getRawBits());
 	return(*this);
 }
-
