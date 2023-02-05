@@ -23,7 +23,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -I $(INCLUDE) -o $(NAME)
 
-$(OBJ_PATH)/%.o: %.cpp $(INCLUDE)
+$(OBJ_PATH)/%.o: %.cpp
 	mkdir -p $(@D)
 	$(CC) $(CFLAGS) -o $@ -c -I $(INCLUDE) $<
 

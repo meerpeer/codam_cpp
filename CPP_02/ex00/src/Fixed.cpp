@@ -1,5 +1,6 @@
 #include "../include/Fixed.hpp"
 #include <iostream>
+#include "Fixed.hpp"
 
 Fixed::Fixed() : _value(0)
 {
@@ -35,5 +36,6 @@ Fixed &Fixed::operator=(const Fixed &other)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	setRawBits(other.getRawBits());
-	return (*this) ;
+	return(*this);
 }
+
