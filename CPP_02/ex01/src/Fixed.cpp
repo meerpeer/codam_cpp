@@ -70,3 +70,5 @@ Fixed::~Fixed()
 	std::cout << "Deconstructor called" << std::endl;
 	return ;
 }
+
+//reference: https://spin.atomicobject.com/2012/03/15/simple-fixed-point-math/
