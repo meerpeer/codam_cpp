@@ -1,16 +1,23 @@
 #include "../include/ClapTrap.hpp"
-#include "ClapTrap.hpp"
 #include <iostream>
+
+ClapTrap::ClapTrap(std::string name, int hitPoints, int energyPoints, int attackDamage)
+	: _name(name), _hitPoints(hitPoints),
+	_energyPoints(energyPoints), _attackDamage(attackDamage)
+{
+	std::cout << "Claptrap: initialize constructor called" << std::endl;
+}
+
 
 ClapTrap::ClapTrap() :
 	_hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Claptrap: default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &copy)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Claptrap: copy constructor called" << std::endl;
 	*this = copy;
 	return ;
 }
@@ -19,12 +26,12 @@ ClapTrap::ClapTrap(const std::string name) :
 	_name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
 	
-	std::cout << this->_name << " : constructor called" << std::endl;
+	std::cout << "Claptrap: constructor with name \"" << name << "\" called" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 {
-	std::cout << "assignment operator called" << std::endl;
+	std::cout << "Claptrap: assignment operator called" << std::endl;
 	this->_name = other.getName();
 	this->_hitPoints = other.getHitPoints();
 	this->_energyPoints = other.getEnergypoints();
@@ -35,7 +42,10 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << this->_name << " :destructor called" << std::endl;
+	std::cout	<< "Claptrap: " 
+				<< this->_name
+				<< " :destructor called" 
+				<< std::endl;
 }
 
 
@@ -134,4 +144,22 @@ std::ostream &operator<<(std::ostream &output, const ClapTrap &clapTrap)
 	return output;
 }
 
+void ClapTrap::setName(std::string name)
+{
+	this->_name = name;
+}
 
+void ClapTrap::setHitPoints(int hp)
+{
+	this->_hitPoints = hp;
+}
+
+void ClapTrap::setEnergypoints(int ep)
+{
+	this->_energyPoints = ep;
+}
+
+void ClapTrap::setAttackDamage(int ad)
+{
+	this->_attackDamage = ad;
+}
