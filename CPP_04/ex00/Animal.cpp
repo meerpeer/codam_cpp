@@ -6,13 +6,12 @@
 /*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/07 15:15:35 by mevan-de      #+#    #+#                 */
-/*   Updated: 2023/02/07 16:34:23 by mevan-de      ########   odam.nl         */
+/*   Updated: 2023/02/07 16:36:46 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/Animal.hpp"
 #include <iostream>
-#include "Animal.hpp"
 
 Animal::Animal() : type("")
 {
