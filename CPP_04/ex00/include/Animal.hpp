@@ -6,7 +6,7 @@
 /*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/07 15:13:41 by mevan-de      #+#    #+#                 */
-/*   Updated: 2023/02/07 15:30:22 by mevan-de      ########   odam.nl         */
+/*   Updated: 2023/02/07 16:34:00 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ class Animal
 		Animal& operator=(const Animal& other);
 		~Animal();
 
-		std::string getType() const;
+		std::string	getType() const;
+		void		makeSound();
 };
 
 #endif

@@ -6,12 +6,13 @@
 /*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/07 15:15:35 by mevan-de      #+#    #+#                 */
-/*   Updated: 2023/02/07 15:30:34 by mevan-de      ########   odam.nl         */
+/*   Updated: 2023/02/07 16:34:23 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/Animal.hpp"
 #include <iostream>
+#include "Animal.hpp"
 
 Animal::Animal() : type("")
 {
@@ -49,4 +50,9 @@ Animal::~Animal()
 std::string Animal::getType() const
 {
 	return this->type;
+}
+
+void Animal::makeSound()
+{
+	
 }

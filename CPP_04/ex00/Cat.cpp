@@ -6,13 +6,13 @@
 /*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/07 15:18:46 by mevan-de      #+#    #+#                 */
-/*   Updated: 2023/02/07 15:19:22 by mevan-de      ########   odam.nl         */
+/*   Updated: 2023/02/07 16:31:50 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/Cat.hpp"
 
-Cat::Cat(/* args */)
+Cat::Cat() : Animal("Cat")
 {
 }
 
