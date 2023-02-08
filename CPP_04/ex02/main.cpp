@@ -6,11 +6,11 @@
 /*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/07 15:14:29 by mevan-de      #+#    #+#                 */
-/*   Updated: 2023/02/08 14:47:17 by mevan-de      ########   odam.nl         */
+/*   Updated: 2023/02/08 14:29:50 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/Animal.hpp"
+#include "include/AAnimal.hpp"
 #include "include/Cat.hpp"
 #include "include/Dog.hpp"
 
@@ -22,34 +22,28 @@ int main()
 	//======== BASIC TEST FOR LEAKS =======//
 	//=====================================//
 	std::cout << "======== construct =======" << std::endl;
-	int			nrAnimals = 6;
-	const Animal *pack[nrAnimals];
-	for(int i = 0; i < nrAnimals; i++)
-	{
-		if (i % 2)
-			pack[i] = new Dog();
-		else
-			pack[i] = new Cat();
-	}
+	// won't work as it is abstract:
+	// const AAnimal* meta = new AAnimal();
+	const AAnimal* doggie = new Dog();
+	const AAnimal* rightCat = new Cat();
 	std::cout << std::endl;
 
 	std::cout << "========= types =========" << std::endl;
-	for(int i = 0; i < nrAnimals; i++)
-		std::cout << pack[i]->getType() << std::endl;
+	std::cout << "rightCat type = " << rightCat->getType() << " " << std::endl;
+	std::cout << "doggie type = " << doggie->getType() << " " << std::endl;
 	std::cout << std::endl;
 	
 	std::cout << "========= sounds ========" << std::endl;
-	for(int i = 0; i < nrAnimals; i++)
-		pack[i]->makeSound();
+	rightCat->makeSound(); //will output the cat sound!
+	doggie->makeSound();
 	std::cout << std::endl;
 
 	std::cout << "======== destruct =======" << std::endl;
-	for(int i = 0; i < nrAnimals; i++)
-	{
-		std::cout << "animal[" << i << "]:" <<std::endl;
-		delete pack[i];
-		std::cout << std::endl;
-	}
+	std::cout << "deleting rightCat:" << std::endl;
+	delete rightCat;
+	std::cout << std::endl;
+	std::cout << "deleting doggie:" << std::endl;
+	delete doggie;
 	std::cout << std::endl;
 
 	std::cout << "======= leak check ======" << std::endl;

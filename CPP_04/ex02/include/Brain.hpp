@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Cat.hpp                                            :+:    :+:            */
+/*   Brain.hpp                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/02/07 15:13:50 by mevan-de      #+#    #+#                 */
-/*   Updated: 2023/02/08 14:34:24 by mevan-de      ########   odam.nl         */
+/*   Created: 2023/02/08 13:24:30 by mevan-de      #+#    #+#                 */
+/*   Updated: 2023/02/08 14:02:41 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include <string>
 
-class Cat : public Animal
+class Brain
 {
-	private:
-		Brain *_catBrain;
-	public:
-		Cat();
-		Cat(const Cat& copy);
-		Cat& operator=(const Cat& other);
-		~Cat();
+private:
+	std::string	_ideas[100];
+public:
+	Brain();
+	Brain(const Brain& copy);
+	Brain& operator=(const Brain& other);
+	~Brain();
 
-		void	makeSound() const;
-		Brain	*getBrain() const;
+	std::string	getIdea(int index) const;
+	void		setIdea(int index, std::string newIdea);
+	int			getNrIdeas() const;
 };
 
 #endif

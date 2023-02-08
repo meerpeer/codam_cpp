@@ -6,14 +6,14 @@
 /*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/07 15:18:46 by mevan-de      #+#    #+#                 */
-/*   Updated: 2023/02/08 14:34:27 by mevan-de      ########   odam.nl         */
+/*   Updated: 2023/02/08 13:56:40 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/Cat.hpp"
 #include <iostream>
 
-Cat::Cat() : Animal("Cat")
+Cat::Cat() : AAnimal("Cat")
 {
 	std::cout << "Cat: default constructor called" << std::endl;
 	_catBrain = new Brain();

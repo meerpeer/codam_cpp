@@ -6,14 +6,14 @@
 /*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/07 15:21:30 by mevan-de      #+#    #+#                 */
-/*   Updated: 2023/02/08 14:34:30 by mevan-de      ########   odam.nl         */
+/*   Updated: 2023/02/08 13:48:26 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/Dog.hpp"
 #include <iostream>
 
-Dog::Dog() : Animal("Dog")
+Dog::Dog() : AAnimal("Dog")
 {
 	std::cout << "Dog: default constructor called" << std::endl;
 	_dogBrain = new Brain();

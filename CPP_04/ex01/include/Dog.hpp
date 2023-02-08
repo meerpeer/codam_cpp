@@ -6,17 +6,17 @@
 /*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/07 15:14:13 by mevan-de      #+#    #+#                 */
-/*   Updated: 2023/02/08 13:35:45 by mevan-de      ########   odam.nl         */
+/*   Updated: 2023/02/08 14:34:21 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DOG_HPP
 #define DOG_HPP
 
-#include "AAnimal.hpp"
+#include "Animal.hpp"
 #include "Brain.hpp"
 
-class Dog : public AAnimal
+class Dog : public Animal
 {
 	private:
 		Brain* _dogBrain;

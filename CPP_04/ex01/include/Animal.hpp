@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Cat.hpp                                            :+:    :+:            */
+/*   Animal.hpp                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/02/07 15:13:50 by mevan-de      #+#    #+#                 */
-/*   Updated: 2023/02/08 14:34:24 by mevan-de      ########   odam.nl         */
+/*   Created: 2023/02/08 14:33:28 by mevan-de      #+#    #+#                 */
+/*   Updated: 2023/02/08 14:33:31 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include <string>
 
-class Cat : public Animal
+class Animal
 {
-	private:
-		Brain *_catBrain;
+	protected:
+		std::string type;
 	public:
-		Cat();
-		Cat(const Cat& copy);
-		Cat& operator=(const Cat& other);
-		~Cat();
+		Animal();
+		Animal(std::string type);
+		Animal(const Animal& copy);
+		Animal& operator=(const Animal& other);
+		virtual ~Animal();
 
-		void	makeSound() const;
-		Brain	*getBrain() const;
+		std::string	getType() const;
+		virtual void		makeSound() const;
 };
 
 #endif

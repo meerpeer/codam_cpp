@@ -6,7 +6,7 @@ NAME = brain
 
 OBJ_PATH = obj
 
-SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
+SRCS = main.cpp AAnimal.cpp Cat.cpp Dog.cpp Brain.cpp
 OBJS = $(addprefix $(OBJ_PATH)/,$(SRCS:.cpp=.o))
 
 CC = c++
