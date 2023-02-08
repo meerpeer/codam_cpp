@@ -6,17 +6,17 @@
 /*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/07 15:21:30 by mevan-de      #+#    #+#                 */
-/*   Updated: 2023/02/08 13:34:36 by mevan-de      ########   odam.nl         */
+/*   Updated: 2023/02/08 13:48:26 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/Dog.hpp"
 #include <iostream>
-#include "Dog.hpp"
 
-Dog::Dog() : Animal("Dog")
+Dog::Dog() : AAnimal("Dog")
 {
 	std::cout << "Dog: default constructor called" << std::endl;
+	_dogBrain = new Brain();
 }
 
 Dog::Dog(const Dog &copy)
@@ -30,8 +30,16 @@ Dog &Dog::operator=(const Dog &other)
 {
 	std::cout << "Dog: assignment constructor called" << std::endl;
 	this->type = other.getType();
+	this->_dogBrain = new Brain(*other.getBrain());
 	return *this;
 }
+
+
+Brain *Dog::getBrain() const
+{
+	return _dogBrain;
+}
+
 
 void Dog::makeSound() const
 {
@@ -41,4 +49,5 @@ void Dog::makeSound() const
 Dog::~Dog()
 {
 	std::cout << "Dog: deconstructor called" << std::endl;
+	delete _dogBrain;
 }
