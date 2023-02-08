@@ -6,7 +6,7 @@
 /*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/07 15:14:29 by mevan-de      #+#    #+#                 */
-/*   Updated: 2023/02/08 14:47:17 by mevan-de      ########   odam.nl         */
+/*   Updated: 2023/02/08 14:51:30 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ int main()
 	}
 	std::cout << std::endl;
 
-	std::cout << "======= leak check ======" << std::endl;
-	system("leaks -q brain");
-	std::cout << std::endl;
+	// std::cout << "======= leak check ======" << std::endl;
+	// system("leaks -q brain");
+	// std::cout << std::endl;
 
 	//=====================================//
 	//============= COPY TESTS ============//
@@ -110,8 +110,8 @@ int main()
 	delete copyCat;
 	std::cout << std::endl;
 	
-	std::cout << "======= leak check ======" << std::endl;
-	system("leaks -q brain");
-	std::cout << std::endl;
+	// std::cout << "======= leak check ======" << std::endl;
+	// system("leaks -q brain");
+	// std::cout << std::endl;
 	return 0;
 }

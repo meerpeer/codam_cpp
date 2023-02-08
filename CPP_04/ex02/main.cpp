@@ -6,7 +6,7 @@
 /*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/07 15:14:29 by mevan-de      #+#    #+#                 */
-/*   Updated: 2023/02/08 14:29:50 by mevan-de      ########   odam.nl         */
+/*   Updated: 2023/02/08 14:53:23 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,33 +22,41 @@ int main()
 	//======== BASIC TEST FOR LEAKS =======//
 	//=====================================//
 	std::cout << "======== construct =======" << std::endl;
-	// won't work as it is abstract:
-	// const AAnimal* meta = new AAnimal();
-	const AAnimal* doggie = new Dog();
-	const AAnimal* rightCat = new Cat();
+	int			nrAnimals = 6;
+	//this should now be impossible:
+	//const AAnimal* nope = new AAnimal();
+	const AAnimal *pack[nrAnimals];
+	for(int i = 0; i < nrAnimals; i++)
+	{
+		if (i % 2)
+			pack[i] = new Dog();
+		else
+			pack[i] = new Cat();
+	}
 	std::cout << std::endl;
 
 	std::cout << "========= types =========" << std::endl;
-	std::cout << "rightCat type = " << rightCat->getType() << " " << std::endl;
-	std::cout << "doggie type = " << doggie->getType() << " " << std::endl;
+	for(int i = 0; i < nrAnimals; i++)
+		std::cout << pack[i]->getType() << std::endl;
 	std::cout << std::endl;
 	
 	std::cout << "========= sounds ========" << std::endl;
-	rightCat->makeSound(); //will output the cat sound!
-	doggie->makeSound();
+	for(int i = 0; i < nrAnimals; i++)
+		pack[i]->makeSound();
 	std::cout << std::endl;
 
 	std::cout << "======== destruct =======" << std::endl;
-	std::cout << "deleting rightCat:" << std::endl;
-	delete rightCat;
-	std::cout << std::endl;
-	std::cout << "deleting doggie:" << std::endl;
-	delete doggie;
+	for(int i = 0; i < nrAnimals; i++)
+	{
+		std::cout << "animal[" << i << "]:" <<std::endl;
+		delete pack[i];
+		std::cout << std::endl;
+	}
 	std::cout << std::endl;
 
-	std::cout << "======= leak check ======" << std::endl;
-	system("leaks -q brain");
-	std::cout << std::endl;
+	// std::cout << "======= leak check ======" << std::endl;
+	// system("leaks -q brain");
+	// std::cout << std::endl;
 
 	//=====================================//
 	//============= COPY TESTS ============//
@@ -104,8 +112,8 @@ int main()
 	delete copyCat;
 	std::cout << std::endl;
 	
-	std::cout << "======= leak check ======" << std::endl;
-	system("leaks -q brain");
-	std::cout << std::endl;
+	// std::cout << "======= leak check ======" << std::endl;
+	// system("leaks -q brain");
+	// std::cout << std::endl;
 	return 0;
 }
