@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Cat.hpp                                            :+:    :+:            */
+/*   WrongAnimal.hpp                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/02/07 15:13:50 by mevan-de      #+#    #+#                 */
-/*   Updated: 2023/02/08 12:56:04 by mevan-de      ########   odam.nl         */
+/*   Created: 2023/02/07 15:13:41 by mevan-de      #+#    #+#                 */
+/*   Updated: 2023/02/08 13:04:58 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
 
-#include "Animal.hpp"
+#include <string>
 
-class Cat : public Animal
+class WrongAnimal
 {
-private:
-	/* data */
-public:
-	Cat();
-	Cat(const Cat& copy);
-	Cat& operator=(const Cat& other);
-	~Cat();
+	protected:
+		std::string type;
+	public:
+		WrongAnimal();
+		WrongAnimal(std::string type);
+		WrongAnimal(const WrongAnimal& copy);
+		WrongAnimal& operator=(const WrongAnimal& other);
+		~WrongAnimal();
 
-	void	makeSound() const;
+		std::string	getType() const;
+		void		makeSound() const;
 };
 
 #endif

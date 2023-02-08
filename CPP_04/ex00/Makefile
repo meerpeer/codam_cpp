@@ -6,7 +6,7 @@ NAME = poly
 
 OBJ_PATH = obj
 
-SRCS = main.cpp
+SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
 OBJS = $(addprefix $(OBJ_PATH)/,$(SRCS:.cpp=.o))
 
 CC = c++
