@@ -6,7 +6,7 @@
 /*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/08 13:26:29 by mevan-de      #+#    #+#                 */
-/*   Updated: 2023/02/08 13:49:18 by mevan-de      ########   odam.nl         */
+/*   Updated: 2023/02/08 14:21:24 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,21 +28,32 @@ Brain::Brain(const Brain &copy)
 Brain &Brain::operator=(const Brain &other)
 {
 	std::cout << "Brain: assignment operator called" << std::endl;
-	int	nr_ideas = sizeof(this->_ideas) / sizeof(std::string);
-	std::cout << "nr_ideas = " << nr_ideas << std::endl;
+	int	nr_ideas = getNrIdeas();
 	for (int i = 0; i < nr_ideas; i++)
 		this->_ideas[i] = other.getIdea(i);
 	return *this;
 }
-Brain::~Brain()
-{
-	std::cout << "Brain: deconstructor called" << std::endl;
-}
 
 std::string Brain::getIdea(int index) const
 {
-	int	nr_ideas = sizeof(this->_ideas) / sizeof(std::string);
-	if (index >= nr_ideas || index < 0 )
+	if (index >= getNrIdeas() || index < 0 )
 		return (NULL) ;
 	return this->_ideas[index];
+}
+
+void Brain::setIdea(int index, std::string newIdea)
+{
+	if (index >= getNrIdeas() || index < 0 )
+		return ;
+	this->_ideas[index] = newIdea;
+}
+
+int Brain::getNrIdeas() const
+{
+	return (int)(sizeof(this->_ideas) / sizeof(std::string));
+}
+
+Brain::~Brain()
+{
+	std::cout << "Brain: deconstructor called" << std::endl;
 }

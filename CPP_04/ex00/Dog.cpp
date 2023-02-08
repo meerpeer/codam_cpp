@@ -6,13 +6,12 @@
 /*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/07 15:21:30 by mevan-de      #+#    #+#                 */
-/*   Updated: 2023/02/08 13:34:36 by mevan-de      ########   odam.nl         */
+/*   Updated: 2023/02/08 13:54:07 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/Dog.hpp"
 #include <iostream>
-#include "Dog.hpp"
 
 Dog::Dog() : Animal("Dog")
 {

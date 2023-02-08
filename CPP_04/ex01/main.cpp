@@ -6,7 +6,7 @@
 /*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/07 15:14:29 by mevan-de      #+#    #+#                 */
-/*   Updated: 2023/02/08 13:22:41 by mevan-de      ########   odam.nl         */
+/*   Updated: 2023/02/08 14:29:50 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,12 @@
 
 int main()
 {
+	//=====================================//
+	//======== BASIC TEST FOR LEAKS =======//
+	//=====================================//
 	std::cout << "======== construct =======" << std::endl;
-	// won't work:
-	//const AAnimal* meta = new AAnimal();
+	// won't work as it is abstract:
+	// const AAnimal* meta = new AAnimal();
 	const AAnimal* doggie = new Dog();
 	const AAnimal* rightCat = new Cat();
 	std::cout << std::endl;
@@ -41,6 +44,68 @@ int main()
 	std::cout << std::endl;
 	std::cout << "deleting doggie:" << std::endl;
 	delete doggie;
+	std::cout << std::endl;
+
+	std::cout << "======= leak check ======" << std::endl;
+	system("leaks -q brain");
+	std::cout << std::endl;
+
+	//=====================================//
+	//============= COPY TESTS ============//
+	//=====================================//
+	std::cout << "====== dog copy test ====" << std::endl;
+	const Dog* firstDog = new Dog();
+	std::cout << std::endl;
+	//setting a thought to check if the value gets copied
+	firstDog->getBrain()->setIdea(0, "Dog wants play!");
+	std::cout	<< "firstDog: idea[0] = "
+				<< firstDog->getBrain()->getIdea(0)
+				<< std::endl
+				<< "firstDog: brain address = "
+				<< firstDog->getBrain()
+				<< std::endl << std::endl;
+	//copying the firstDog to copyDog
+	std::cout << "Deep copying the firstDog:" << std::endl;
+	const Dog* copyDog = new Dog(*firstDog);
+	std::cout << std::endl;
+	std::cout	<< "copyDog: idea[0] = "
+				<< copyDog->getBrain()->getIdea(0)
+				<< std::endl
+				<< "copyDog: brain address = "
+				<< copyDog->getBrain()
+				<< std::endl << std::endl;
+
+
+	std::cout << "====== cat copy test ====" << std::endl;
+	const Cat* firstCat = new Cat();
+	std::cout << std::endl;
+	firstCat->getBrain()->setIdea(0, "Cat wants murder!");
+	std::cout	<< "firstCat: idea[0] = "
+				<< firstCat->getBrain()->getIdea(0)
+				<< std::endl
+				<< "firstCat: brain address = "
+				<< firstCat->getBrain()
+				<< std::endl << std::endl;
+	//copying the firstCat to copyCat
+	std::cout << "Deep copying the firstCat:" << std::endl;
+	const Cat* copyCat = new Cat(*firstCat);
+	std::cout << std::endl;
+	std::cout	<< "copyCat: idea[0] = "
+				<< copyCat->getBrain()->getIdea(0)
+				<< std::endl
+				<< "copyCat: brain address = "
+				<< copyCat->getBrain()
+				<< std::endl << std::endl;
+	
+	std::cout << "======== destruct =======" << std::endl;
+	delete firstDog;
+	delete copyDog;
+	delete firstCat;
+	delete copyCat;
+	std::cout << std::endl;
+	
+	std::cout << "======= leak check ======" << std::endl;
+	system("leaks -q brain");
 	std::cout << std::endl;
 	return 0;
 }

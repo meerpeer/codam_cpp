@@ -2,7 +2,7 @@
 #========= General variables =========#
 #=====================================#
 
-NAME = abstract
+NAME = brain
 
 OBJ_PATH = obj
 

@@ -6,7 +6,7 @@
 /*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/08 13:24:30 by mevan-de      #+#    #+#                 */
-/*   Updated: 2023/02/08 13:46:07 by mevan-de      ########   odam.nl         */
+/*   Updated: 2023/02/08 14:02:41 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ public:
 	~Brain();
 
 	std::string	getIdea(int index) const;
+	void		setIdea(int index, std::string newIdea);
+	int			getNrIdeas() const;
 };
 
 #endif
