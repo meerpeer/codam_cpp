@@ -6,7 +6,7 @@
 /*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/07 14:35:50 by mevan-de      #+#    #+#                 */
-/*   Updated: 2023/02/07 14:35:51 by mevan-de      ########   odam.nl         */
+/*   Updated: 2023/02/08 18:34:21 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 class ClapTrap
 {
-private:
+protected:
 	std::string _name;
 	int			_hitPoints;
 	int			_energyPoints;

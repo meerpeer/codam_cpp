@@ -6,7 +6,7 @@
 /*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/07 14:36:50 by mevan-de      #+#    #+#                 */
-/*   Updated: 2023/02/07 14:36:51 by mevan-de      ########   odam.nl         */
+/*   Updated: 2023/02/08 18:36:05 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <iostream>
 
 ClapTrap::ClapTrap() :
-	_hitPoints(10), _energyPoints(10), _attackDamage(0)
+	_name(" "), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
 	std::cout << "Default constructor called" << std::endl;
 }
@@ -132,6 +132,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 				<< " gets repaired for [" << amount 
 				<< "] points!"
 				<< std::endl;
+	this->_hitPoints += amount;
 	this->_energyPoints--;
 }
 
