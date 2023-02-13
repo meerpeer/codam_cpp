@@ -6,7 +6,7 @@
 /*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/07 14:35:50 by mevan-de      #+#    #+#                 */
-/*   Updated: 2023/02/08 18:34:21 by mevan-de      ########   odam.nl         */
+/*   Updated: 2023/02/13 14:02:39 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,6 @@ public:
 	int			getHitPoints( void ) const;
 	int			getEnergypoints( void ) const;
 	int			getAttackDamage( void) const;
-
-	void		setName( std::string name );
-	void		setHitPoints( int hp );
-	void		setEnergypoints( int ep );
-	void		setAttackDamage( int ad );
 
 	void	attack(const std::string& target);
 	void	takeDamage(unsigned int amount);

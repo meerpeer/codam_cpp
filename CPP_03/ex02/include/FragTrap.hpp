@@ -6,7 +6,7 @@
 /*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/07 14:35:48 by mevan-de      #+#    #+#                 */
-/*   Updated: 2023/02/07 14:54:04 by mevan-de      ########   odam.nl         */
+/*   Updated: 2023/02/13 14:02:46 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class FragTrap : public ClapTrap
 		FragTrap& operator=(const FragTrap& other);
 		~FragTrap();
 	
-	void highFivesGuys (void);
+		void highFivesGuys (void);
 };
 
 std::ostream &operator<<(std::ostream &output, const FragTrap &fragTrap);

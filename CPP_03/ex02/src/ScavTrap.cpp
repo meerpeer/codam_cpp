@@ -6,7 +6,7 @@
 /*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/07 13:38:41 by mevan-de      #+#    #+#                 */
-/*   Updated: 2023/02/07 14:52:58 by mevan-de      ########   odam.nl         */
+/*   Updated: 2023/02/13 14:06:42 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,11 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &other)
 {
 	std::cout << "ScavTrap: assignment operator called" << std::endl;
 
-	this->setName(other.getName());
-	this->setHitPoints(other.getHitPoints());
-	this->setEnergypoints(other.getEnergypoints());
-	this->setAttackDamage(other.getAttackDamage());
+	this->_name = other.getName();
+	this->_hitPoints = other.getHitPoints();
+	this->_energyPoints = other.getEnergypoints();
+	this->_attackDamage = other.getAttackDamage();
+	this->_gateKeeping = other.getGateKeepingMode();
 
 	return (*this);
 }
@@ -51,7 +52,7 @@ void ScavTrap::attack(const std::string &target)
 				<< this->getName() << " attacks " << target
 				<< ", causing " << this->getAttackDamage() << " points of damage!"
 				<< std::endl;
-	setEnergypoints(this->getEnergypoints() - 1);
+	this->_energyPoints--;
 }
 
 void ScavTrap::guardGate()

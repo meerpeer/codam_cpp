@@ -6,7 +6,7 @@
 /*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/07 14:35:35 by mevan-de      #+#    #+#                 */
-/*   Updated: 2023/02/08 18:38:38 by mevan-de      ########   odam.nl         */
+/*   Updated: 2023/02/13 14:02:27 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,24 +155,4 @@ std::ostream &operator<<(std::ostream &output, const ClapTrap &clapTrap)
 	output << "Current Energy:\t\t" << clapTrap.getEnergypoints() << std::endl;
 	output << "Attack Damage:\t\t" << clapTrap.getAttackDamage() << std::endl;
 	return output;
-}
-
-void ClapTrap::setName(std::string name)
-{
-	this->_name = name;
-}
-
-void ClapTrap::setHitPoints(int hp)
-{
-	this->_hitPoints = hp;
-}
-
-void ClapTrap::setEnergypoints(int ep)
-{
-	this->_energyPoints = ep;
-}
-
-void ClapTrap::setAttackDamage(int ad)
-{
-	this->_attackDamage = ad;
 }

@@ -6,7 +6,7 @@
 /*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/07 14:35:30 by mevan-de      #+#    #+#                 */
-/*   Updated: 2023/02/07 14:57:42 by mevan-de      ########   odam.nl         */
+/*   Updated: 2023/02/13 14:03:48 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,10 @@ FragTrap &FragTrap::operator=(const FragTrap &other)
 {
 	std::cout << "FragTrap: assignment operator called" << std::endl;
 	
-	this->setName(other.getName());
-	this->setHitPoints(other.getHitPoints());
-	this->setEnergypoints(other.getEnergypoints());
-	this->setAttackDamage(other.getAttackDamage());
+	this->_name = other.getName();
+	this->_hitPoints = other.getHitPoints();
+	this->_energyPoints = other.getEnergypoints();
+	this->_attackDamage = other.getAttackDamage();
 
 	return (*this);
 }
