@@ -2,7 +2,7 @@
 #========= General variables =========#
 #=====================================#
 
-NAME = brain
+NAME = Bureaucrat
 
 OBJ_PATH = obj
 
