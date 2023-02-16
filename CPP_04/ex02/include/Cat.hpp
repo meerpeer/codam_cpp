@@ -6,7 +6,7 @@
 /*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/07 15:13:50 by mevan-de      #+#    #+#                 */
-/*   Updated: 2023/02/08 13:53:37 by mevan-de      ########   odam.nl         */
+/*   Updated: 2023/02/16 13:59:32 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Cat : public AAnimal
 		Cat();
 		Cat(const Cat& copy);
 		Cat& operator=(const Cat& other);
-		~Cat();
+		virtual ~Cat();
 
 		void	makeSound() const;
 		Brain	*getBrain() const;
