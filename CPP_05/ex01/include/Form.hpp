@@ -34,7 +34,7 @@ class Form
 		int			getRequiredGrade() const;
 		int			getExecuteGrade() const;
 
-		void		beSigned(const Bureaucrat &steve);
+		void		beSigned(const Bureaucrat &bureaucrat);
 };
 
 std::ostream&	operator<<(std::ostream &output, const Form& bureaucrat);
