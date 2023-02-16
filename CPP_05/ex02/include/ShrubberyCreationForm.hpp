@@ -9,7 +9,9 @@ class ShrubberyCreationForm : public AForm
 		/* data */
 	public:
 		ShrubberyCreationForm();
-		~ShrubberyCreationForm();
+		virtual ~ShrubberyCreationForm();
+
+		void	execute(Bureaucrat const & executor) const;
 };
 
 ShrubberyCreationForm::ShrubberyCreationForm()

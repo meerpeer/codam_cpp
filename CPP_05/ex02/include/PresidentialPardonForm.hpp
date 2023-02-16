@@ -9,7 +9,9 @@ class PresidentialPardonForm : public AForm
 		/* data */
 	public:
 		PresidentialPardonForm(/* args */);
-		~PresidentialPardonForm();
+		virtual ~PresidentialPardonForm();
+
+		void	execute(Bureaucrat const & executor) const;
 };
 
 PresidentialPardonForm::PresidentialPardonForm(/* args */)

@@ -9,7 +9,9 @@ class RobotomyRequestForm : public AForm
 		/* data */
 	public:
 		RobotomyRequestForm(/* args */);
-		~RobotomyRequestForm();
+		virtual ~RobotomyRequestForm();
+
+		void	execute(Bureaucrat const & executor) const;
 };
 
 RobotomyRequestForm::RobotomyRequestForm(/* args */)
