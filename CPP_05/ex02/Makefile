@@ -9,7 +9,7 @@ OBJ_PATH = obj
 SRCS = main.cpp Bureaucrat.cpp AForm.cpp\
 		PresidentialPardonForm.cpp\
 		RobotomyRequestForm.cpp\
-		#ShrubberyCreationForm.cpp
+		ShrubberyCreationForm.cpp
 OBJS = $(addprefix $(OBJ_PATH)/,$(SRCS:.cpp=.o))
 
 CC = c++

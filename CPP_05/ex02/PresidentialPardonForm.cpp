@@ -2,13 +2,13 @@
 #include <iostream>
 
 PresidentialPardonForm::PresidentialPardonForm()
-	: AForm("Presidential Pardon Form", 25, 45), _target("Nobody") {}
+	: AForm("Presidential Pardon Form", 25, 5), _target("Nobody") {}
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string target)
-	: AForm("Presidential Pardon Form", 25, 45), _target(target) {}
+	: AForm("Presidential Pardon Form", 25, 5), _target(target) {}
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &copy)
-	: AForm("Presidential Pardon Form", 25, 45), _target(copy.getTarget()) {}
+	: AForm("Presidential Pardon Form", 25, 5), _target(copy.getTarget()) {}
 
 PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &other)
 {

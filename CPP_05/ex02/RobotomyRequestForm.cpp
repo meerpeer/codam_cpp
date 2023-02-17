@@ -2,13 +2,13 @@
 #include <iostream>
 
 RobotomyRequestForm::RobotomyRequestForm()
-	: AForm("Robotomy Request Form", 25, 45), _target("Nobody") {}
+	: AForm("Robotomy Request Form", 72, 45), _target("Nobody") {}
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string target)
-	: AForm("Robotomy Request Form", 25, 45), _target(target) {}
+	: AForm("Robotomy Request Form", 72, 45), _target(target) {}
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy)
-	: AForm("Robotomy Request Form", 25, 45), _target(copy.getTarget()) {}
+	: AForm("Robotomy Request Form", 72, 45), _target(copy.getTarget()) {}
 
 RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &other)
 {
