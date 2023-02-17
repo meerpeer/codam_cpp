@@ -6,7 +6,7 @@
 /*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/13 16:36:17 by mevan-de      #+#    #+#                 */
-/*   Updated: 2023/02/16 17:45:39 by mevan-de      ########   odam.nl         */
+/*   Updated: 2023/02/17 11:43:55 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,29 @@ void Bureaucrat::signForm(AForm& form)
 		std::cout	<< "❌ \""
 					<< this->_name 
 					<< "\" couldn't sign \""
+					<< form.getName()
+					<< "\" because: \""
+					<< e.what()
+					<< "\""
+					<< std::endl;
+	}
+}
+
+void Bureaucrat::executeForm(AForm const &form)
+{
+	try {
+		form.execute(*this);
+		std::cout	<< "✅ \""
+					<< this->_name 
+					<< "\" executed \""
+					<< form.getName()
+					<< "\""
+					<< std::endl;
+	}
+	catch (std::exception &e) {
+		std::cout	<< "❌ \""
+					<< this->_name 
+					<< "\" couldn't execute \""
 					<< form.getName()
 					<< "\" because: \""
 					<< e.what()

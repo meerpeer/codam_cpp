@@ -6,21 +6,17 @@
 class PresidentialPardonForm : public AForm
 {
 	private:
-		/* data */
+		std::string	_target;
 	public:
-		PresidentialPardonForm(/* args */);
+		PresidentialPardonForm(const std::string target);
+		PresidentialPardonForm();
+		PresidentialPardonForm(const PresidentialPardonForm &copy);
+		PresidentialPardonForm &operator=(const PresidentialPardonForm &other);
 		virtual ~PresidentialPardonForm();
 
-		void	execute(Bureaucrat const & executor) const;
+		void execute(Bureaucrat const &executor) const;
+		std::string getTarget() const;
 };
-
-PresidentialPardonForm::PresidentialPardonForm(/* args */)
-{
-}
-
-PresidentialPardonForm::~PresidentialPardonForm()
-{
-}
 
 
 #endif

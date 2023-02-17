@@ -1,6 +1,5 @@
 #include "include/AForm.hpp"
 #include <iostream>
-#include "AForm.hpp"
 
 AForm::AForm() 
 	: _name("no-name"), _signed(false), _requiredGrade(1), _executeGrade(1)

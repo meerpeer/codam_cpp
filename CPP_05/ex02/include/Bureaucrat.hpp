@@ -6,7 +6,7 @@
 /*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/13 16:01:07 by mevan-de      #+#    #+#                 */
-/*   Updated: 2023/02/16 17:45:05 by mevan-de      ########   odam.nl         */
+/*   Updated: 2023/02/17 11:33:12 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ class Bureaucrat
 		void		decrementGrade();
 
 		void		signForm(AForm& form);
+		void		executeForm(AForm const & form);
 };
 
 std::ostream& operator<<(std::ostream& output, const Bureaucrat& bureaucrat);
