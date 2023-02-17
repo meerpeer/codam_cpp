@@ -6,20 +6,16 @@
 class RobotomyRequestForm : public AForm
 {
 	private:
-		/* data */
+		std::string _target;
 	public:
-		RobotomyRequestForm(/* args */);
+		RobotomyRequestForm();
+		RobotomyRequestForm(std::string target);
+		RobotomyRequestForm(const RobotomyRequestForm &copy);
+		RobotomyRequestForm &operator=(const RobotomyRequestForm &other);
 		virtual ~RobotomyRequestForm();
 
-		void	execute(Bureaucrat const & executor) const;
+		std::string getTarget() const;
+		void execute(Bureaucrat const &executor) const;
 };
-
-RobotomyRequestForm::RobotomyRequestForm(/* args */)
-{
-}
-
-RobotomyRequestForm::~RobotomyRequestForm()
-{
-}
 
 #endif
