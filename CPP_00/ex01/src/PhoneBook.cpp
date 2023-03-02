@@ -6,7 +6,7 @@
 /*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/25 15:46:59 by mevan-de      #+#    #+#                 */
-/*   Updated: 2023/02/02 15:31:28 by mevan-de      ########   odam.nl         */
+/*   Updated: 2023/02/21 14:04:18 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ std::string	PhoneBook::get_input(std::string prompt, bool isPhoneNr) {
 }
 
 void PhoneBook::save_new_contact() {
-	bool	correct_input = false;
+	//bool	correct_input = false;
 	int		index = this->_currContactIndex;
 
 	std::cout << std::endl << "Adding new contact" << std::endl;
