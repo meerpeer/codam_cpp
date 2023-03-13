@@ -7,7 +7,9 @@ enum	e_type {
 	CHAR,
 	INT,
 	DOUBLE,
+	INF_DOUBLE,
 	FLOAT,
+	INF_FLOAT,
 	INVALID
 };
 
@@ -15,24 +17,26 @@ class Scalar
 {
 	private:
 		std::string	_literal;
-		e_type		_type;
-		void ConvertFromInt();
-		void ConvertFromChar();
+
+		void	convertFromInt() const;
+		void	convertFromChar() const;
+		void	convertFromFloat() const;
+		void	convertFromDouble() const;
+		void	convertFromInf(e_type type) const;
+		e_type	getType() const;
+		
 
 	public:
 		Scalar();
 		Scalar(std::string literal);
+		Scalar(const Scalar &copy);
+		Scalar& operator=(const Scalar &other);
 		~Scalar();
-		ConvertLiteral()
+
+		void		convertLiteral() const;
+		std::string	getLiteral() const;
 };
 
-Scalar::Scalar()
-{
-}
-
-Scalar::~Scalar()
-{
-}
-
+std::ostream &operator<< (std::ostream &output, Scalar &scalar);
 
 #endif
