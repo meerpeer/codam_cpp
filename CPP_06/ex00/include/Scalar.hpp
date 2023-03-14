@@ -4,13 +4,8 @@
 #include <string>
 
 enum	e_type {
-	CHAR,
-	INT,
-	DOUBLE,
 	INF_DOUBLE,
-	FLOAT,
-	INF_FLOAT,
-	INVALID
+	INF_FLOAT
 };
 
 class Scalar
@@ -18,13 +13,13 @@ class Scalar
 	private:
 		std::string	_literal;
 
-		void	convertFromInt() const;
-		void	convertFromChar() const;
-		void	convertFromFloat() const;
-		void	convertFromDouble() const;
-		void	convertFromInf(e_type type) const;
-		e_type	getType() const;
-		
+		void printValues(long double num);
+		void printChar(long double num);
+		void printInt(long double num);
+		void printFloat(long double num);
+		void printDouble(long double num);
+		void printValuesInf(e_type type) const;
+		bool shouldAddZero();
 
 	public:
 		Scalar();
@@ -33,7 +28,8 @@ class Scalar
 		Scalar& operator=(const Scalar &other);
 		~Scalar();
 
-		void		convertLiteral() const;
+
+		void		convertLiteral();
 		std::string	getLiteral() const;
 };
 

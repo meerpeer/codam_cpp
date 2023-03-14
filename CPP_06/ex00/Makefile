@@ -6,7 +6,7 @@ NAME = Conversion
 
 OBJ_PATH = obj
 
-SRCS = main.cpp 
+SRCS = main.cpp Scalar.cpp
 OBJS = $(addprefix $(OBJ_PATH)/,$(SRCS:.cpp=.o))
 
 CC = c++
